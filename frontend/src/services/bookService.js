@@ -23,7 +23,7 @@ export const bookService = {
       queryParams.append("search", filters.search)
     }
 
-    const url = `${API_BASE_URL}/books${queryParams.toString() ? `?${queryParams.toString()}` : ""}`
+    const url = `${API_BASE_URL}/api/books${queryParams.toString() ? `?${queryParams.toString()}` : ""}`
 
     const response = await fetch(url)
     if (!response.ok) {
@@ -34,7 +34,7 @@ export const bookService = {
 
   // Get single book by ID
   getBookById: async (id) => {
-    const response = await fetch(`${API_BASE_URL}/books/${id}`)
+    const response = await fetch(`${API_BASE_URL}/api/books/${id}`)
     if (!response.ok) {
       throw new Error("Failed to fetch book")
     }
@@ -43,7 +43,7 @@ export const bookService = {
 
   // Create new book
   createBook: async (bookData) => {
-    const response = await fetch(`${API_BASE_URL}/books`, {
+    const response = await fetch(`${API_BASE_URL}/api/books`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export const bookService = {
 
   // Update book
   updateBook: async (id, bookData) => {
-    const response = await fetch(`${API_BASE_URL}/books/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/books/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ export const bookService = {
 
   // Delete book
   deleteBook: async (id) => {
-    const response = await fetch(`${API_BASE_URL}/books/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/books/${id}`, {
       method: "DELETE",
     })
 
