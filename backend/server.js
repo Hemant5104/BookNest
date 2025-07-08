@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 10000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://booknest.vercel.app', // replace with your actual Vercel URL
+  origin: 'https://book-nest-rouge.vercel.app',
   credentials: true
 }));
 app.use(express.json())
